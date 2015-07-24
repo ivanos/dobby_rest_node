@@ -1,4 +1,4 @@
-.PHONY: all compile get-deps update-deps clean deep-clean rel rebar
+.PHONY: all compile get-deps update-deps clean deep-clean rel
 
 all: rel
 

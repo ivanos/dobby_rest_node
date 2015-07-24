@@ -3,6 +3,19 @@
 Dobby Erlang node that depends on `dobby_rest_lib` intended for running
 Dobby Rest as standalone service.
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
+**Table of Contents**
+
+- [dobby_rest_node](#dobbyrestnode)
+    - [Requirements](#requirements)
+    - [Building](#building)
+    - [Running](#running)
+    - [Connecting via ssh](#connecting-via-ssh)
+    - [Configuration](#configuration)
+
+<!-- markdown-toc end -->
+
+
 ## Requirements
 - Erlang R17+
 - [dobby](https://github.com/FlowForwarding/dobby)
@@ -39,6 +52,8 @@ to the `erl_sshd` section of `rel/files/sys.config`.
 ```shell
 _rel/dobby_rest_node/bin/dobby_rest_node
 ```
+
+To access the Dobby Visualizer go to http://localhost:8080/static/www/index.html
 
 ## Connecting via ssh
 If you genereated keys in erl_sshd before generating the dobby release,
