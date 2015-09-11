@@ -81,3 +81,36 @@ dobby_rest_node tries to connect to a `dobby` node when starting. The dobby
 node name is stored in the sys.config.
 
 
+## Configuring TLS
+
+To enable TLS support for the HTTP interface you have to configure it in the `erl_cowboy`
+application and provide the following options:
+
+* certificate file name (expected in the `priv/erl_cowboy`)
+* key file name (expected in the `priv/erl_cowboy`)
+* password to the key if it is password protected
+
+The configuration has to be placed in the sys.config file. Below is an example:
+```erlang
+[
+...
+ {erl_cowboy, [
+               {port, 8080},
+               {listeners, 10},
+               {app, 'dobby_rest_node'},
+               {tls_enabled, true},
+               {tls_opts, [{certfile, "dummy.crt"},
+                           {keyfile, "dummy.key"},
+                           {password, ""}]}
+               ]},
+...
+]
+```
+
+There is a sample certificate and key generator that you can run with:
+`make tls`.
+The above example config works with the generated files. To test the TLS,
+put the config snippet into the `config/sys.config`. Remember
+to re-generated the release after the change.
+
+With TLS enabled, the Visualizer can be accessed via https://localhost:8080/static/www/index.html.
