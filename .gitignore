@@ -10,5 +10,6 @@ _rel/dobby_rest_node
 rebar
 id_rsa*
 priv/erl_sshd
+priv/erl_cowboy
 Mnesia*
 log
